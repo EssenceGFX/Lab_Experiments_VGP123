@@ -1,6 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animator))]
+[RequireComponent (typeof(GroundCheck), typeof(Jump))]
 public class Player : MonoBehaviour
 {
     // Movement
@@ -12,16 +14,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator anim;
+    private GroundCheck grdChk;
 
-    // Ground Check
-    [Range(0.01f, 0.1f)]
-    public float groundCheckRadius = 0.02f;
-    public LayerMask isGroundLayer;
     public bool isGrounded = false;
-    private Transform groundCheck;
-
-    // Attacks
-    public bool isAttacking;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,35 +24,35 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        grdChk = GetComponent<GroundCheck>();
 
         if (jumpForce < 0) jumpForce = 7.0f;
-
-        // Initialize Ground Check
-        GameObject newGameObject = new GameObject();
-        newGameObject.transform.SetParent(transform);
-        newGameObject.transform.localPosition = Vector3.zero;
-        newGameObject.name = "GroundCheck";
-        groundCheck = newGameObject.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        AnimatorClipInfo[] curPlayingClips = anim.GetCurrentAnimatorClipInfo(0);
         CheckIsGrounded();
 
         float hInput = Input.GetAxis("Horizontal");
 
-        rb.linearVelocity = new Vector2(hInput * speed, rb.linearVelocity.y);
+        // Check if an attack animation is currently playing
+        bool isAttacking = curPlayingClips.Length > 0 &&
+                           (curPlayingClips[0].clip.name == "ThrowAttack" || curPlayingClips[0].clip.name == "SitAttack");
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        if (!isAttacking) // Prevent input while attacking
+        {
+            rb.linearVelocity = new Vector2(hInput * speed, rb.linearVelocity.y);
 
-        // Attack Animation Triggers
-        if (Input.GetButtonDown("Fire1"))
-            anim.SetTrigger("ThrowAttack");
-
-        if (Input.GetButtonDown("Fire2"))
-            anim.SetTrigger("SitAttack");
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if (isGrounded)
+                    anim.SetTrigger("ThrowAttack");
+                else
+                    anim.SetTrigger("SitAttack");
+            }
+        }
 
         // Sprite Flipping
         if (hInput != 0) sr.flipX = (hInput < 0);
@@ -68,6 +63,6 @@ public class Player : MonoBehaviour
 
     void CheckIsGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
+        isGrounded = grdChk.isGrounded();
     }
 }

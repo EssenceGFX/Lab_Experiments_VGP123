@@ -2109,7 +2109,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -4085,7 +4085,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_87
+      name: fireball
       rect:
         serializedVersion: 2
         x: 79
@@ -17971,7 +17971,6 @@ TextureImporter:
       Sprite_Enemies_84: 7020787362663800049
       Sprite_Enemies_85: -6574684018802885241
       Sprite_Enemies_86: -2669691847292180851
-      Sprite_Enemies_87: -7185912387340643949
       Sprite_Enemies_88: -5709072872950518472
       Sprite_Enemies_89: 1790661336946998242
       Sprite_Enemies_9: -1403785383596086482
@@ -17985,6 +17984,7 @@ TextureImporter:
       Sprite_Enemies_97: -5235741533605767461
       Sprite_Enemies_98: -3146763840220451440
       Sprite_Enemies_99: 3848975548304371034
+      fireball: -7185912387340643949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
