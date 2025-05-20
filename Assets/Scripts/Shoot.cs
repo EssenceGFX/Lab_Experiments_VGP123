@@ -20,7 +20,7 @@ public class Shoot : MonoBehaviour
         if (initShotVelocity == Vector2.zero)
         {
             Debug.Log("Initial Shot Velocity has been changed to a default value");
-            initShotVelocity.x = 7.0f;
+            initShotVelocity.x = 10.0f;
         }
 
         if (!spawnPointLeft || !spawnPointRight || !projectilePrefab)

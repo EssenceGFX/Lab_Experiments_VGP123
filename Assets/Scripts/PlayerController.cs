@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
                     anim.SetTrigger("ThrowAttack");
                 else
                     anim.SetTrigger("SitAttack");
+                    GetComponent<Jump>().jumpCancelled = true;
             }
         }
 
