@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8773272073905988789}
   - component: {fileID: 6679618969840792063}
   m_Layer: 0
-  m_Name: fireball
+  m_Name: projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 586120049
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7185912387340643949, guid: 96cd68d44e3e12042872e08acc6b57f2, type: 3}
+  m_Sprite: {fileID: 6158810890211573945, guid: 57efbef8d51a05d458a1d88bd683c94b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.4, y: 0.4}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -164,5 +164,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.2}
-  m_Radius: 0.2
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.4

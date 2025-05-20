@@ -6,8 +6,8 @@ public class Jump : MonoBehaviour
     Rigidbody2D rb;
     Player pc;
 
-    [SerializeField, Range(2, 5)] private float jumpHeight = 5;
-    [SerializeField, Range(1, 20)] private float jumpFallForce = 20;
+    [SerializeField, Range(2, 8)] private float jumpHeight = 6;
+    [SerializeField, Range(1, 10)] private float jumpFallForce = 8;
 
     float timeHeld;
     float maxHoldTime = 0.5f;

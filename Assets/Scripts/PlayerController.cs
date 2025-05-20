@@ -6,9 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Movement
+    [Range(3, 9)]
+    public float speed = 7.0f;
     [Range(3, 10)]
-    public float speed = 5.0f;
-    public float jumpForce = 7.0f;
+    public float jumpForce = 8.0f;
 
     // Component References
     private Rigidbody2D rb;

@@ -6425,7 +6425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: item_preview_243
+      name: Projectile
       rect:
         serializedVersion: 2
         x: 48
@@ -9125,6 +9125,7 @@ TextureImporter:
       Coin: 63940954095492537
       Gem: -4121081713644166752
       Leaf_Powerup: 6219853903642191433
+      Projectile: 6158810890211573945
       item_preview_0: -7098726399724812675
       item_preview_1: 5457915138605999878
       item_preview_10: -8358851955288563569
@@ -9284,7 +9285,6 @@ TextureImporter:
       item_preview_240: -5738783661280641618
       item_preview_241: 4235221990171612606
       item_preview_242: -6366195277394362260
-      item_preview_243: 6158810890211573945
       item_preview_244: -6325444955550411022
       item_preview_245: 2056765026049942930
       item_preview_246: -5615111529887265271
