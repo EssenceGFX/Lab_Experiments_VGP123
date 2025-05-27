@@ -27,7 +27,15 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         grdChk = GetComponent<GroundCheck>();
 
-        if (jumpForce < 0) jumpForce = 7.0f;
+        if (jumpForce < 0) jumpForce = 8.0f;
+    }
+
+    public void Bounce(float force)
+    {
+        if (rb.linearVelocity.y <= 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, force);
+        }
     }
 
     // Update is called once per frame

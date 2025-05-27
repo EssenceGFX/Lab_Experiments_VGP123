@@ -6227,7 +6227,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: item_preview_234
+      name: beeProjectile
       rect:
         serializedVersion: 2
         x: 224
@@ -9126,6 +9126,7 @@ TextureImporter:
       Gem: -4121081713644166752
       Leaf_Powerup: 6219853903642191433
       Projectile: 6158810890211573945
+      beeProjectile: 5479133951040698874
       item_preview_0: -7098726399724812675
       item_preview_1: 5457915138605999878
       item_preview_10: -8358851955288563569
@@ -9275,7 +9276,6 @@ TextureImporter:
       item_preview_231: 1655775580036434523
       item_preview_232: -1651507547596771834
       item_preview_233: -110690995463476395
-      item_preview_234: 5479133951040698874
       item_preview_235: 401928077278157873
       item_preview_236: -5659334317557735880
       item_preview_237: 5882060018269430874

@@ -7,7 +7,7 @@ public class Jump : MonoBehaviour
     Player pc;
 
     [SerializeField, Range(2, 8)] private float jumpHeight = 6;
-    [SerializeField, Range(1, 10)] private float jumpFallForce = 8;
+    [SerializeField, Range(1, 10)] private float jumpFallForce = 6;
 
     float timeHeld;
     float maxHoldTime = 0.5f;

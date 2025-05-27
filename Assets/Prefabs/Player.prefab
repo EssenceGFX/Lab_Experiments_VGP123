@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 6
-  jumpFallForce: 10
+  jumpFallForce: 6
   jumpCancelled: 0
 --- !u!1 &7626468597475908928
 GameObject:
