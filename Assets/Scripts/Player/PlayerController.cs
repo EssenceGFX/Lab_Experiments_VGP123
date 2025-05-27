@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
         // Check if an attack animation is currently playing
         bool isAttacking = curPlayingClips.Length > 0 &&
-                           (curPlayingClips[0].clip.name == "ThrowAttack" || curPlayingClips[0].clip.name == "SitAttack");
+                           (curPlayingClips[0].clip.name == "Attack" || curPlayingClips[0].clip.name == "Stomp");
 
         if (!isAttacking) // Prevent input while attacking
         {
