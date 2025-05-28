@@ -26,8 +26,11 @@ public class Powerup : MonoBehaviour
                 break;
 
             case "Gem":
-                Debug.Log("Picked up Gem +Health");
-                // Health increase logic here
+                Debug.Log("Picked up Gem +1 Life");
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.Lives++;
+                }
                 break;
 
             default:

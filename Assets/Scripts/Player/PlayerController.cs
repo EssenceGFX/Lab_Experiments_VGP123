@@ -8,8 +8,10 @@ public class Player : MonoBehaviour
     // Movement
     [Range(3, 9)]
     public float speed = 7.0f;
+    public float defaultSpeed = 7.0f;
     [Range(3, 10)]
     public float jumpForce = 8.0f;
+    public float defaultJumpForce = 8.0f;
 
     // Component References
     private Rigidbody2D rb;
@@ -26,8 +28,13 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         grdChk = GetComponent<GroundCheck>();
+    }
 
-        if (jumpForce < 0) jumpForce = 8.0f;
+    public void ResetStats()
+    {
+        speed = defaultSpeed;
+        jumpForce = defaultJumpForce;
+        Debug.Log("Player Speed & Jump Force set to default values");
     }
 
     public void Bounce(float force)

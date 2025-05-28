@@ -4,11 +4,31 @@ public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private float minXPos;
     [SerializeField] private float maxXPos;
-
     [SerializeField] private float minYPos;
     [SerializeField] private float maxYPos;
 
-    public Transform playerRef;
+    private Transform playerRef;
+
+    private void Awake()
+    {
+        // Subscribe to the event
+        GameManager.Instance.OnPlayerControllerCreated += AssignPlayer;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe to prevent memory leaks
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnPlayerControllerCreated -= AssignPlayer;
+        }
+    }
+
+    private Player AssignPlayer(Player playerInstance)
+    {
+        playerRef = playerInstance.transform;
+        return playerInstance;
+    }
 
     void Update()
     {

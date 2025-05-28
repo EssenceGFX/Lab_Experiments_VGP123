@@ -13,7 +13,13 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Hit Player!");
+            Debug.Log("Hit Player! -1 life");
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.Lives--;
+            }
+
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Ground"))

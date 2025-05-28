@@ -7,7 +7,11 @@ public class DeathBarrier : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.transform.position = Vector3.zero;
-            Debug.Log("Player hit death barrier — teleported to (0, 0, 0)");
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.Lives--;
+            }
+            Debug.Log("Player hit death barrier -1 life & teleported to (0, 0, 0)");
         }
     }
 }
